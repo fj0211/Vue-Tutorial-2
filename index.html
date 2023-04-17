@@ -1,0 +1,42 @@
+<html lang = "en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src = "https://unpkg.com/vue@3.0.2"></script>
+    <!-- install live server and vetur -->
+    <!-- atom keymap / better comments / code spell checker / colorize / copy relative path / css peek / eslint / htmlcss support / javascript code snippets -->
+    <!-- jquery codesnippet prettier material icon theme -->
+</head>
+<body>
+    <h1>Hello !!</h1>
+    <div id="app">
+        <div v-if = "showBooks">
+            <ul>
+            <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+              <h3>{{ book.title }}</h3>
+              <p>{{ book.author }}</p>
+            </li>
+          </ul>
+     </div>
+    <!-- <button v-on:click="age++">Increase Age</button>
+            <button v-on:click="age--">Decrease Age</button>
+            <div @click = "changeTitle('Oathbringer')">Placeholder for book</div> -->
+				<button @click="toggleShowBooks">
+					<span v-if = "showBooks">
+						Hide Books
+					</span>
+					<span v-else>
+						Show Books
+					</span>
+				</button>
+                <br>
+                <div class="box" @mouseover = "handleEvent($event, 5)">mouseover (enter)</div>
+                <div class="box" @mouseleave = "handleEvent">mouse leave</div>
+                <div class="box" @dblclick = "handleEvent">double click</div>
+                <div class="box" @mousemove = "handleMouseMove">position - {{ x }} {{ y }}</div>
+				</div>
+    <script src = "app.js"></script>
+</body>
+</html>
